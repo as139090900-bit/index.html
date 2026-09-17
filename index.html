@@ -1,0 +1,1351 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>برای عسل ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent
+}
+
+html,body{
+  margin:0;
+  min-height:100%;
+  font-family:Tahoma,Arial,sans-serif;
+  color:#fff;
+  background:#05020c
+}
+
+body{
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 30%,#351650,#10051b 48%,#020207)
+}
+
+button,input{
+  font:inherit
+}
+
+button{
+  border:0;
+  border-radius:999px;
+  padding:14px 22px;
+  margin:6px;
+  color:#fff;
+  background:linear-gradient(135deg,#ff4f9a,#8d4dff);
+  box-shadow:0 8px 25px #0006;
+  cursor:pointer
+}
+
+button.secondary{
+  background:#ffffff15
+}
+
+input{
+  width:min(320px,85vw);
+  padding:14px 18px;
+  border-radius:16px;
+  border:1px solid #ffffff2a;
+  background:#ffffff0d;
+  color:white;
+  text-align:center;
+  outline:none
+}
+
+.page{
+  display:none;
+  min-height:100vh;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  position:relative
+}
+
+.page.active{
+  display:flex;
+  animation:in .55s ease
+}
+
+@keyframes in{
+  from{
+    opacity:0;
+    transform:scale(.97) translateY(12px)
+  }
+  to{
+    opacity:1;
+    transform:none
+  }
+}
+
+.card{
+  width:min(760px,94vw);
+  max-height:92vh;
+  overflow:auto;
+  padding:28px 20px;
+  text-align:center;
+  border:1px solid #ffffff22;
+  border-radius:30px;
+  background:#10071ddd;
+  backdrop-filter:blur(14px);
+  box-shadow:0 0 70px #a64dff22
+}
+
+h1{
+  font-size:clamp(32px,9vw,60px);
+  margin:12px 0
+}
+
+h2{
+  font-size:clamp(23px,6vw,38px)
+}
+
+p{
+  font-size:17px;
+  line-height:2
+}
+
+.logo{
+  font-size:68px;
+  animation:pulse 1.5s infinite
+}
+
+@keyframes pulse{
+  50%{
+    transform:scale(1.1)
+  }
+}
+
+#stars{
+  position:fixed;
+  inset:0;
+  pointer-events:none
+}
+
+.star{
+  position:absolute;
+  width:3px;
+  height:3px;
+  background:white;
+  border-radius:50%;
+  opacity:.7;
+  animation:twinkle 2s infinite alternate
+}
+
+@keyframes twinkle{
+  to{
+    opacity:.15;
+    transform:scale(.4)
+  }
+}
+
+.fog{
+  position:fixed;
+  inset:auto -20% 0;
+  height:38%;
+  background:
+    radial-gradient(
+      ellipse,
+      #ffffff10,
+      transparent 65%
+    );
+  filter:blur(20px);
+  pointer-events:none;
+  animation:fog 8s ease-in-out infinite alternate
+}
+
+@keyframes fog{
+  to{
+    transform:translateX(8%) scale(1.08)
+  }
+}
+
+.progress{
+  height:6px;
+  background:#ffffff12;
+  border-radius:8px;
+  margin:18px 0;
+  overflow:hidden
+}
+
+.progress i{
+  display:block;
+  height:100%;
+  width:0;
+  background:#fff;
+  border-radius:8px;
+  transition:.5s
+}
+
+.hiddenMsg{
+  display:none;
+  margin:15px;
+  padding:14px;
+  border-radius:18px;
+  background:#ffffff0c;
+  border:1px solid #ffffff15
+}
+
+.hiddenMsg.show{
+  display:block;
+  animation:in .4s
+}
+
+.envelope{
+  width:220px;
+  height:140px;
+  margin:20px auto;
+  position:relative;
+  background:#b84f91;
+  border-radius:10px;
+  cursor:pointer;
+  box-shadow:0 20px 50px #0008
+}
+
+.envelope:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#d26ba9;
+  clip-path:polygon(
+    0 0,
+    50% 58%,
+    100% 0
+  )
+}
+
+.envelope span{
+  position:absolute;
+  bottom:18px;
+  left:0;
+  right:0;
+  font-size:32px
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  max-width:360px;
+  margin:18px auto
+}
+
+.game{
+  min-height:85px;
+  font-size:28px;
+  border-radius:20px;
+  background:#ffffff0d
+}
+
+.heartGame{
+  position:relative;
+  height:230px;
+  overflow:hidden;
+  border-radius:20px;
+  background:#ffffff06;
+  border:1px solid #ffffff12
+}
+
+.fheart{
+  position:absolute;
+  font-size:32px;
+  animation:pop .3s
+}
+
+@keyframes pop{
+  from{
+    transform:scale(.3);
+    opacity:0
+  }
+  to{
+    transform:scale(1);
+    opacity:1
+  }
+}
+
+.thoughts{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:center
+}
+
+.bubble{
+  padding:12px 16px;
+  border-radius:22px;
+  background:#ffffff0c;
+  border:1px solid #ffffff12
+}
+
+.lock{
+  font-size:60px
+}
+
+.gift{
+  font-size:95px;
+  cursor:pointer;
+  animation:pulse 1.2s infinite
+}
+
+.letter{
+  white-space:pre-line;
+  text-align:right;
+  background:#fffaf015;
+  padding:22px;
+  border-radius:20px;
+  line-height:2.2
+}
+
+#toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#16101fdd;
+  padding:12px 18px;
+  border-radius:999px;
+  display:none;
+  z-index:99
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+<div class="fog"></div>
+<div id="toast"></div>
+
+
+<!-- صفحه شروع -->
+
+<section class="page active" id="p1">
+
+<div class="card">
+
+<div class="logo">🍯❤️</div>
+
+<h1>عسل...</h1>
+
+<p>
+یک داستان کوچک و تعاملی برایت آماده شده.
+</p>
+
+<button onclick="start()">
+شروع داستان ✨
+</button>
+
+</div>
+
+</section>
+
+
+<!-- رمز -->
+
+<section class="page" id="p2">
+
+<div class="card">
+
+<div class="lock">🔐</div>
+
+<h2>اتاق اول قفل است</h2>
+
+<p>
+رمز را وارد کن.
+</p>
+
+<input
+id="code"
+placeholder="رمز را وارد کن"
+>
+
+<br>
+
+<button onclick="unlock()">
+باز کردن قفل
+</button>
+
+<p style="opacity:.6;font-size:13px">
+رمز: عسل
+</p>
+
+</div>
+
+</section>
+
+
+<!-- پاکت -->
+
+<section class="page" id="p3">
+
+<div class="card">
+
+<h2>📩 یک پاکت برای تو</h2>
+
+<p>
+روی پاکت بزن تا باز شود.
+</p>
+
+<div
+class="envelope"
+onclick="openEnvelope()"
+>
+
+<span>💌</span>
+
+</div>
+
+<div
+id="envText"
+class="hiddenMsg"
+>
+بعضی حرف‌ها وقتی با یک لحظه‌ی خاص گفته شوند،
+ماندگارتر می‌شوند.
+</div>
+
+<button
+id="envNext"
+style="display:none"
+onclick="go('p4');setProgress(15)"
+>
+ادامه
+</button>
+
+</div>
+
+</section>
+
+
+<!-- فصل اول -->
+
+<section class="page" id="p4">
+
+<div class="card">
+
+<h2>📖 فصل اول</h2>
+
+<p id="story1"></p>
+
+<div class="thoughts">
+
+<div
+class="bubble"
+onclick="reveal('m1')"
+>
+💭 یک پیام مخفی
+</div>
+
+<div
+class="bubble"
+onclick="reveal('m2')"
+>
+💭 یک راز کوچک
+</div>
+
+<div
+class="bubble"
+onclick="reveal('m3')"
+>
+💭 یک فکر
+</div>
+
+</div>
+
+<div
+id="m1"
+class="hiddenMsg"
+>
+گاهی یک نفر فقط با حضورش حال یک روز معمولی را
+عوض می‌کند. ✨
+</div>
+
+<div
+id="m2"
+class="hiddenMsg"
+>
+این داستان قرار نیست چیزی را مجبور کند؛
+فقط قرار است یک حرف را زیباتر بگوید.
+</div>
+
+<div
+id="m3"
+class="hiddenMsg"
+>
+امیرعلی از عسل خوشش می‌آید و دوست دارد
+فرصت آشنایی بیشتری داشته باشند. ❤️
+</div>
+
+<button
+onclick="go('p5');setProgress(30)"
+>
+فصل بعدی
+</button>
+
+</div>
+
+</section>
+
+
+<!-- آسمان آرزوها -->
+
+<section class="page" id="p5">
+
+<div class="card">
+
+<h2>⭐ آسمان آرزوها</h2>
+
+<p>
+روی صفحه چند ستاره بساز.
+</p>
+
+<div
+id="wishArea"
+class="heartGame"
+onclick="makeStar(event)"
+></div>
+
+<p id="starCount">
+ستاره‌ها: 0 / 5
+</p>
+
+<button
+id="wishNext"
+style="display:none"
+onclick="go('p6');setProgress(45)"
+>
+ادامه
+</button>
+
+</div>
+
+</section>
+
+
+<!-- بازی قلب -->
+
+<section class="page" id="p6">
+
+<div class="card">
+
+<h2>❤️ بازی قلب‌ها</h2>
+
+<p>
+۵ قلب را پیدا و لمس کن.
+</p>
+
+<div
+class="heartGame"
+id="heartGame"
+></div>
+
+<p id="heartScore">
+0 / 5
+</p>
+
+<button
+id="heartNext"
+style="display:none"
+onclick="go('p7');setProgress(55)"
+>
+مرحله بعد
+</button>
+
+</div>
+
+</section>
+
+
+<!-- حافظه -->
+
+<section class="page" id="p7">
+
+<div class="card">
+
+<h2>🧠 حافظه‌ی کوچک</h2>
+
+<p>
+دو کارت مشابه را پیدا کن.
+</p>
+
+<div
+class="grid"
+id="memory"
+></div>
+
+<p id="memStatus">
+دو کارت را انتخاب کن.
+</p>
+
+<button
+id="memNext"
+style="display:none"
+onclick="go('p8');setProgress(65)"
+>
+ادامه
+</button>
+
+</div>
+
+</section>
+
+
+<!-- چیزهای مورد علاقه -->
+
+<section class="page" id="p8">
+
+<div class="card">
+
+<h2>
+💜 چیزهایی که امیرعلی دوست دارد
+</h2>
+
+<div class="grid">
+
+<button
+class="game"
+onclick="reveal('r1')"
+>
+😊
+</button>
+
+<button
+class="game"
+onclick="reveal('r2')"
+>
+✨
+</button>
+
+<button
+class="game"
+onclick="reveal('r3')"
+>
+🌙
+</button>
+
+</div>
+
+<div
+id="r1"
+class="hiddenMsg"
+>
+خنده‌های واقعی.
+</div>
+
+<div
+id="r2"
+class="hiddenMsg"
+>
+لحظه‌های ساده و قشنگ.
+</div>
+
+<div
+id="r3"
+class="hiddenMsg"
+>
+حرف‌هایی که از دل گفته می‌شوند.
+</div>
+
+<button
+onclick="go('p9');setProgress(75)"
+>
+ادامه
+</button>
+
+</div>
+
+</section>
+
+
+<!-- آینده -->
+
+<section class="page" id="p9">
+
+<div class="card">
+
+<h2>
+🌃 اگر داستان ادامه پیدا کند...
+</h2>
+
+<p>
+چند تصویر از چیزهایی که شاید یک روز ساخته شوند:
+</p>
+
+<div class="thoughts">
+
+<div class="bubble">
+☕ یک گفت‌وگوی ساده
+</div>
+
+<div class="bubble">
+😂 کلی خنده
+</div>
+
+<div class="bubble">
+🌙 شب‌های پر از حرف
+</div>
+
+<div class="bubble">
+✨ خاطرات جدید
+</div>
+
+</div>
+
+<p style="opacity:.7">
+هیچ‌کدام تضمین‌شده نیستند؛
+آینده را انتخاب‌های واقعی آدم‌ها می‌سازند.
+</p>
+
+<button
+onclick="go('p10');setProgress(82)"
+>
+ادامه
+</button>
+
+</div>
+
+</section>
+
+
+<!-- نامه -->
+
+<section class="page" id="p10">
+
+<div class="card">
+
+<h2>💌 نامه‌ی امیرعلی</h2>
+
+<div
+class="letter"
+id="letter"
+></div>
+
+<button
+onclick="go('p11');setProgress(90)"
+>
+نامه‌ی آخر 🎁
+</button>
+
+</div>
+
+</section>
+
+
+<!-- هدیه -->
+
+<section class="page" id="p11">
+
+<div class="card">
+
+<h2>
+🎁 یک چیز دیگر مانده...
+</h2>
+
+<p>
+روی جعبه بزن.
+</p>
+
+<div
+class="gift"
+onclick="openGift()"
+>
+🎁
+</div>
+
+<div
+id="giftText"
+class="hiddenMsg"
+>
+آخرین نامه منتظر توست.
+</div>
+
+<button
+id="giftNext"
+style="display:none"
+onclick="go('p12');setProgress(96)"
+>
+باز کردن نامه
+</button>
+
+</div>
+
+</section>
+
+
+<!-- نامه نهایی -->
+
+<section class="page" id="p12">
+
+<div class="card">
+
+<div class="logo">
+🌟
+</div>
+
+<h2>
+نامه‌ی نهایی
+</h2>
+
+<div class="letter">
+
+عسل،
+
+امیرعلی فقط می‌خواست حرفش را
+در یک شکل متفاوت و قشنگ به تو برساند.
+
+او از تو خوشش می‌آید و دوست دارد
+اگر خودت هم مایل بودی،
+فرصت بیشتری برای شناختن هم داشته باشید.
+
+هیچ عجله‌ای نیست و انتخابت
+هر چیزی که باشد محترم است. ❤️
+
+— امیرعلی
+
+</div>
+
+<div class="progress">
+<i id="bar"></i>
+</div>
+
+<button onclick="yes()">
+آره ❤️
+</button>
+
+<button
+class="secondary"
+onclick="later()"
+>
+فعلاً نه 🌷
+</button>
+
+</div>
+
+</section>
+
+
+<!-- پایان آره -->
+
+<section class="page" id="yes">
+
+<div class="card">
+
+<div class="logo">
+🎉💖🎉
+</div>
+
+<h1>
+چه قشنگ! ✨
+</h1>
+
+<p>
+اگر هر دو طرف مایل باشند،
+این می‌تواند شروع یک آشنایی تازه باشد.
+</p>
+
+<button onclick="celebrate()">
+جشن 🎊
+</button>
+
+<button
+class="secondary"
+onclick="restart()"
+>
+از اول
+</button>
+
+</div>
+
+</section>
+
+
+<!-- پایان نه -->
+
+<section class="page" id="later">
+
+<div class="card">
+
+<div class="logo">
+🌷
+</div>
+
+<h1>
+انتخابت محترمه
+</h1>
+
+<p>
+هیچ فشاری نیست.
+مهم این است که هر دو نفر
+با خیال راحت انتخاب کنند.
+</p>
+
+<button onclick="restart()">
+از اول
+</button>
+
+</div>
+
+</section>
+
+
+<script>
+
+const pages=[
+  ...document.querySelectorAll('.page')
+];
+
+let stars=0;
+let hearts=0;
+let found=[];
+let memFirst=null;
+let memLock=false;
+
+
+function go(id){
+
+  pages.forEach(
+    p=>p.classList.remove('active')
+  );
+
+  document
+    .getElementById(id)
+    .classList.add('active');
+}
+
+
+function setProgress(n){
+
+  document
+    .getElementById('bar')
+    .style.width=n+'%';
+
+}
+
+
+function toast(s){
+
+  let t=document.getElementById('toast');
+
+  t.textContent=s;
+
+  t.style.display='block';
+
+  setTimeout(
+    ()=>t.style.display='none',
+    1500
+  );
+
+}
+
+
+function start(){
+
+  go('p2');
+
+}
+
+
+function unlock(){
+
+  if(
+    document
+    .getElementById('code')
+    .value
+    .trim()==='عسل'
+  ){
+
+    go('p3');
+
+  }else{
+
+    toast('رمز درست نیست');
+
+  }
+
+}
+
+
+function openEnvelope(){
+
+  document
+    .getElementById('envText')
+    .classList.add('show');
+
+  document
+    .getElementById('envNext')
+    .style.display='inline-block';
+
+}
+
+
+function reveal(id){
+
+  document
+    .getElementById(id)
+    .classList.add('show');
+
+}
+
+
+function makeStar(e){
+
+  if(stars>=5)return;
+
+  stars++;
+
+  let a=document.createElement('span');
+
+  a.textContent='⭐';
+
+  a.style.position='absolute';
+
+  a.style.left=(e.offsetX-10)+'px';
+
+  a.style.top=(e.offsetY-10)+'px';
+
+  a.style.fontSize='25px';
+
+  document
+    .getElementById('wishArea')
+    .appendChild(a);
+
+  document
+    .getElementById('starCount')
+    .textContent=
+      'ستاره‌ها: '+stars+' / 5';
+
+  if(stars===5){
+
+    document
+      .getElementById('wishNext')
+      .style.display='inline-block';
+
+  }
+
+}
+
+
+function spawnHeart(){
+
+  if(hearts>=5)return;
+
+  let g=document
+    .getElementById('heartGame');
+
+  let h=document.createElement('span');
+
+  h.className='fheart';
+
+  h.textContent='❤️';
+
+  h.style.left=
+    Math.random()*85+'%';
+
+  h.style.top=
+    Math.random()*75+'%';
+
+  h.onclick=()=>{
+
+    hearts++;
+
+    h.remove();
+
+    document
+      .getElementById('heartScore')
+      .textContent=
+        hearts+' / 5';
+
+    if(hearts<5){
+
+      spawnHeart();
+
+    }else{
+
+      document
+        .getElementById('heartNext')
+        .style.display='inline-block';
+
+    }
+
+  };
+
+  g.appendChild(h);
+
+}
+
+
+for(let i=0;i<5;i++){
+  spawnHeart();
+}
+
+
+function buildMemory(){
+
+  let vals=[
+    '❤️',
+    '⭐',
+    '❤️',
+    '⭐',
+    '🌙',
+    '🌙'
+  ];
+
+  vals.sort(
+    ()=>Math.random()-.5
+  );
+
+  let box=
+    document.getElementById('memory');
+
+  vals.forEach(v=>{
+
+    let b=document.createElement('button');
+
+    b.className='game';
+
+    b.textContent='❓';
+
+    b.onclick=()=>flip(b,v);
+
+    box.appendChild(b);
+
+  });
+
+}
+
+
+function flip(b,v){
+
+  if(
+    memLock ||
+    b.dataset.done
+  )return;
+
+  b.textContent=v;
+
+  if(!memFirst){
+
+    memFirst=b;
+
+    memFirst.dataset.v=v;
+
+    return;
+
+  }
+
+  memLock=true;
+
+  if(memFirst.dataset.v===v){
+
+    b.dataset.done='1';
+
+    memFirst.dataset.done='1';
+
+    found.push(v);
+
+    memFirst=null;
+
+    memLock=false;
+
+    if(found.length>=3){
+
+      document
+        .getElementById('memStatus')
+        .textContent=
+        'هر سه جفت پیدا شدند! 🎉';
+
+      document
+        .getElementById('memNext')
+        .style.display='inline-block';
+
+    }
+
+  }else{
+
+    let x=memFirst;
+
+    setTimeout(()=>{
+
+      x.textContent='❓';
+
+      b.textContent='❓';
+
+      memFirst=null;
+
+      memLock=false;
+
+    },650);
+
+  }
+
+}
+
+
+function typeLetter(){
+
+  let text=`عسل،
+
+یه راه متفاوت برای گفتن یک حرف ساده ساختم.
+
+امیرعلی از تو خوشش میاد و دوست داره
+بیشتر باهات آشنا بشه.
+
+شاید قشنگ‌ترین بخش یک داستان،
+خودِ انتخاب آدم‌ها باشه؛
+برای همین اینجا هیچ جوابی از قبل تعیین نشده.
+
+اگر خودت هم دوست داشتی،
+می‌تونیم از اینجا یک آشنایی تازه رو شروع کنیم. ❤️
+
+— امیرعلی`;
+
+  let el=
+    document.getElementById('letter');
+
+  let i=0;
+
+  let q=setInterval(()=>{
+
+    el.textContent=
+      text.slice(0,i++);
+
+    if(i>text.length)
+      clearInterval(q);
+
+  },18);
+
+}
+
+
+function openGift(){
+
+  document
+    .querySelector('.gift')
+    .textContent='💝';
+
+  document
+    .getElementById('giftText')
+    .classList.add('show');
+
+  document
+    .getElementById('giftNext')
+    .style.display='inline-block';
+
+}
+
+
+function yes(){
+
+  go('yes');
+
+  celebrate();
+
+}
+
+
+function later(){
+
+  go('later');
+
+}
+
+
+function celebrate(){
+
+  for(let i=0;i<45;i++){
+
+    let x=document.createElement('span');
+
+    x.textContent=[
+      '❤️',
+      '💖',
+      '✨',
+      '🎉',
+      '⭐'
+    ][
+      Math.floor(Math.random()*5)
+    ];
+
+    x.style.position='fixed';
+
+    x.style.left=
+      Math.random()*100+'vw';
+
+    x.style.top='-30px';
+
+    x.style.fontSize=
+      18+Math.random()*25+'px';
+
+    x.style.zIndex=50;
+
+    x.style.transition=
+      'transform 3s linear,opacity 3s';
+
+    document.body.appendChild(x);
+
+    setTimeout(()=>{
+
+      x.style.transform=
+        'translateY(110vh) rotate(540deg)';
+
+      x.style.opacity='.1';
+
+    },30);
+
+    setTimeout(
+      ()=>x.remove(),
+      3300
+    );
+
+  }
+
+}
+
+
+function restart(){
+
+  location.reload();
+
+}
+
+
+for(let i=0;i<90;i++){
+
+  let s=document.createElement('i');
+
+  s.className='star';
+
+  s.style.left=
+    Math.random()*100+'vw';
+
+  s.style.top=
+    Math.random()*100+'vh';
+
+  s.style.animationDelay=
+    Math.random()*2+'s';
+
+  document
+    .getElementById('stars')
+    .appendChild(s);
+
+}
+
+
+document
+  .getElementById('story1')
+  .textContent=
+  'امیرعلی دنبال یک پیام معمولی نبود؛ '+
+  'می‌خواست حرفش را تبدیل به یک تجربه‌ی کوچک '+
+  'و خاص کند. حالا چند سرنخ و پیام در این داستان '+
+  'منتظر کشف شدن هستند.';
+
+
+buildMemory();
+
+typeLetter();
+
+</script>
+
+</body>
+</html>
